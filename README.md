@@ -66,7 +66,7 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 ### Useful resources
 
-- [Deciding on a CSS Preprocessor](https://www.lambdatest.com/blog/css-preprocessors-sass-vs-less-vs-stylus-with-examples/?utm_source=Reddit&utm_medium=blog&utm_campaign=PM-080720-1&utm_term=OrganicPosting) - A great article to understand the pros and cons the many CSS preprocessors out there. I went with Sass because it is the most used and they declare variables with #$ instead of #@ like LESS does. I am curious to try PostCSS in the future. 
+- [Deciding on a CSS Preprocessor](https://www.lambdatest.com/blog/css-preprocessors-sass-vs-less-vs-stylus-with-examples/?utm_source=Reddit&utm_medium=blog&utm_campaign=PM-080720-1&utm_term=OrganicPosting) - A great article to understand the pros and cons the many CSS preprocessors out there. I went with Sass because it is the most used and they declare variables with **$** instead of **@** like LESS does. I am curious to try PostCSS in the future. 
 - [Sass Website](https://sass-lang.com/guide) - You gotta start somewhere! This allowed me to get the SCSS foundations I needed.
 
 ## Author
