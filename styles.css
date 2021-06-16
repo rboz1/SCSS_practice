@@ -1,0 +1,220 @@
+main .graphic .text-graphic, main .photo .text-photo {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  bottom: 30%;
+  line-height: 1.7em;
+  height: 3em;
+  text-align: center;
+}
+
+.container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr 3fr (0.5fr)[2];
+      grid-template-rows: 1fr 3fr repeat(2, 0.5fr);
+      grid-template-areas: "header header" "main main" "images images" "footer footer";
+  margin: 0;
+}
+
+.container img {
+  max-width: 100%;
+}
+
+header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: header;
+  background-image: url(images/desktop/image-header.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+main {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: main;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: (0.5fr)[4];
+      grid-template-rows: repeat(4, 0.5fr);
+      grid-template-areas: "brand egg" "wine standout" "graphic photo" "feedback feedback";
+}
+
+main .brand {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: brand;
+}
+
+main .egg {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: egg;
+}
+
+main .wine {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: wine;
+}
+
+main .standout {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: standout;
+}
+
+main .graphic {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: graphic;
+  position: relative;
+}
+
+main .photo {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: photo;
+  position: relative;
+}
+
+main .container-clients {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: feedback;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+
+main .container-clients .clients {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 0.5fr (1fr)[3] 0.5fr;
+      grid-template-columns: 0.5fr repeat(3, 1fr) 0.5fr;
+      grid-template-areas: ". emily thomas jennie .";
+  -webkit-column-gap: 2%;
+          column-gap: 2%;
+  padding-top: 5%;
+}
+
+main .container-clients .clients .blurb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: 1.7em;
+  text-align: center;
+}
+
+main .container-clients .clients .emily {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: emily;
+}
+
+main .container-clients .clients .thomas {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: thomas;
+}
+
+main .container-clients .clients .jennie {
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  grid-area: jennie;
+}
+
+main .container-clients .clients img {
+  border-radius: 50%;
+  margin-bottom: 15%;
+}
+
+.images {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: images;
+}
+
+.images .gallery {
+  list-style: none;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+footer {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: footer;
+  background-color: #e6e6e6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer nav ul {
+  list-style: none;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=styles.css.map */
