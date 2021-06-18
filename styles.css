@@ -1,23 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap");
-main .graphic .text-graphic, main .photo .text-photo {
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  bottom: 2%;
-  padding: 27%;
-  line-height: 1.7em;
-  height: 3em;
-  text-align: center;
-}
-
 main .brand, main .standout {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -32,8 +13,30 @@ main .brand, main .standout {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 24%;
+  padding: 15%;
   line-height: 1.7em;
+}
+
+main .brand p, main .standout p {
+  color: #818498;
+  font-size: 1.1rem;
+}
+
+main .brand h2, main .standout h2 {
+  font-size: 2.8rem;
+  font-weight: 900;
+  line-height: 1.3em;
+}
+
+main .brand .learn, main .standout .learn {
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+main .brand h2, main .standout h2, main .brand .learn, main .standout .learn {
+  font-family: "Fraunces", serif;
+  color: #23303e;
 }
 
 a {
@@ -125,6 +128,10 @@ header nav ul a {
   color: white;
 }
 
+header nav ul a:hover {
+  color: #23303e;
+}
+
 header div {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
@@ -172,6 +179,15 @@ main .brand {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: brand;
+  font-family: "Barlow", sans-serif;
+}
+
+main .brand .learn {
+  border-bottom: 5px solid rgba(250, 212, 0, 0.3);
+}
+
+main .brand .learn:hover {
+  border-bottom: 5px solid #fad400;
 }
 
 main .egg {
@@ -190,6 +206,15 @@ main .standout {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: standout;
+  font-family: "Barlow", sans-serif;
+}
+
+main .standout .learn {
+  border-bottom: 5px solid rgba(254, 120, 103, 0.3);
+}
+
+main .standout .learn:hover {
+  border-bottom: 5px solid #fe7867;
 }
 
 main .graphic {
@@ -199,11 +224,71 @@ main .graphic {
   position: relative;
 }
 
+main .graphic .text-overlay {
+  color: #25564b;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  bottom: 2%;
+  padding: 27%;
+  line-height: 1.7em;
+  height: 3em;
+  text-align: center;
+}
+
+main .graphic h3 {
+  font-family: "Fraunces", serif;
+  font-size: 1.8rem;
+}
+
+main .graphic p {
+  font-family: "Barlow", sans-serif;
+  opacity: 0.7;
+}
+
 main .photo {
   -ms-grid-row: 3;
   -ms-grid-column: 2;
   grid-area: photo;
   position: relative;
+}
+
+main .photo .text-overlay {
+  color: #19536b;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  bottom: 2%;
+  padding: 27%;
+  line-height: 1.7em;
+  height: 3em;
+  text-align: center;
+}
+
+main .photo h3 {
+  font-family: "Fraunces", serif;
+  font-size: 1.8rem;
+}
+
+main .photo p {
+  font-family: "Barlow", sans-serif;
+  opacity: 0.7;
 }
 
 main .container-clients {
@@ -226,6 +311,13 @@ main .container-clients {
           justify-content: space-between;
   padding-top: 10%;
   padding-bottom: 10%;
+}
+
+main .container-clients h3 {
+  font-family: "Fraunces", serif;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: #a7abae;
 }
 
 main .container-clients .clients {
@@ -254,6 +346,11 @@ main .container-clients .clients .blurb {
   text-align: center;
 }
 
+main .container-clients .clients .blurb p {
+  font-family: "Barlow", sans-serif;
+  color: #5a636c;
+}
+
 main .container-clients .clients .emily {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
@@ -275,6 +372,19 @@ main .container-clients .clients .jennie {
 main .container-clients .clients img {
   border-radius: 50%;
   margin-bottom: 15%;
+  width: 25%;
+}
+
+main .container-clients .clients div p:first-child {
+  font-family: "Fraunces", serif;
+  color: #23303e;
+  font-size: 1.1rem;
+}
+
+main .container-clients .clients div p:last-child {
+  font-family: "Barlow", sans-serif;
+  color: #a7abae;
+  font-size: 0.9rem;
 }
 
 .images {

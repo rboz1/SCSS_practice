@@ -5,21 +5,46 @@ $font-headers:'Fraunces', serif;
 
 //Font colors
 $white: hsl(0, 0%, 100%);
+$yellow: hsl(51, 100%, 49%);
+$red: hsl(7, 99%, 70%);
 $dark-grey-blue: hsl(212, 27%, 19%);
+$dark-grey: hsl(213, 9%, 39%);
+$grey: hsl(232, 10%, 55%);
+$light-grey: hsl(210, 4%, 67%);
+$graphic: hsl(167, 40%, 24%);
+$photo: hsl(198, 62%, 26%);
 
 // Extended styles and mixins
-%text-shared{
-    position: absolute;
+@mixin overlay($theme: $graphic){
+    .text-overlay{
+        color: $theme;
+        position: absolute;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    
+        bottom: 2%;
+        padding: 27%;
+        line-height: 1.7em;
+        height: 3em;
+        text-align: center;
+    }
 
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    h3{
+        font-family: $font-headers;
+        font-size: 1.8rem;
+    }
 
-    bottom: 2%;
-    padding: 27%;
-    line-height: 1.7em;
-    height: 3em;
-    text-align: center;
+    p{
+        font-family: $font-body;
+        opacity: 0.7;
+    }
+}
+
+@mixin links($theme: $white){
+    font-family: $font-body;
+    color: $theme; 
 }
 
 %card {
@@ -27,13 +52,30 @@ $dark-grey-blue: hsl(212, 27%, 19%);
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    padding: 24%;
+    padding: 15%;
     line-height: 1.7em;
-}
 
-@mixin links($theme: $white){
-    font-family: $font-body;
-    color: $theme; 
+    p{
+        color: $grey;
+        font-size: 1.1rem;
+    }
+
+    h2{
+        font-size: 2.8rem;
+        font-weight: 900;
+        line-height: 1.3em;
+    }
+
+    .learn{
+        text-transform: uppercase;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    h2, .learn{
+        font-family: $font-headers;
+        color: $dark-grey-blue;
+    }
 }
 
 // Link Styling
@@ -109,6 +151,9 @@ header{
             a{
                 @include links;
             }
+            a:hover{
+                color: $dark-grey-blue;
+            }
 
         }
     }
@@ -151,8 +196,17 @@ main{
 
     .brand{
         grid-area: brand;
+        font-family: $font-body;
 
         @extend %card;
+
+        .learn{
+            border-bottom: 5px solid hsla(51, 100%, 49%, 0.3);
+        }
+
+        .learn:hover{
+            border-bottom: 5px solid $yellow;
+        }
     }
 
     .egg{
@@ -165,28 +219,31 @@ main{
 
     .standout{
         grid-area: standout;
+        font-family: $font-body;
 
         @extend %card;
+
+        .learn{
+            border-bottom: 5px solid hsla(7, 99%, 70%, 0.3);
+        }
+       
+        .learn:hover{
+            border-bottom: 5px solid $red;
+        }
     }
 
     .graphic{
         grid-area: graphic;
         position: relative;
 
-        .text-graphic{
-            @extend %text-shared;
-        }
- 
+        @include overlay;
     }
 
     .photo{
         grid-area: photo;
         position: relative;
 
-        .text-photo{
-            @extend %text-shared;
-        }
-        
+        @include overlay($theme: $photo);
     }
 
     .container-clients{
@@ -199,6 +256,13 @@ main{
 
         padding-top: 10%;
         padding-bottom: 10%;
+
+        h3{
+            font-family: $font-headers;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: $light-grey;
+        }
 
         .clients{
             display: grid;
@@ -214,6 +278,11 @@ main{
 
                 line-height: 1.7em;
                 text-align: center;
+
+                p{
+                    font-family: $font-body;
+                    color: $dark-grey;
+                }
             }
             .emily{
                 grid-area: emily;
@@ -227,6 +296,18 @@ main{
             img{
                 border-radius: 50%;
                 margin-bottom: 15%;
+                width: 25%;
+            }
+
+          div p:first-child{
+                    font-family: $font-headers;
+                    color: $dark-grey-blue;
+                    font-size: 1.1rem;
+                }
+            div p:last-child{
+                font-family: $font-body;
+                color: $light-grey;
+                font-size: 0.9rem;
             }
 
         }
