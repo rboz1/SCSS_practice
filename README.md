@@ -32,11 +32,9 @@ Add a screenshot of your solution. The easiest way to do this is to use Firefox 
 ### Built with
 
 - Semantic HTML5
-- CSS3 (SCSS)
+- CSS3 (Sass/SCSS)
 - Flexbox
 - CSS Grid
-- Mobile-first workflow
-- [Styled Components](https://styled-components.com/) - For styles
 
 ### What I learned
 
@@ -68,6 +66,7 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 - [Deciding on a CSS Preprocessor](https://www.lambdatest.com/blog/css-preprocessors-sass-vs-less-vs-stylus-with-examples/?utm_source=Reddit&utm_medium=blog&utm_campaign=PM-080720-1&utm_term=OrganicPosting) - A great article to understand the pros and cons the many CSS preprocessors out there. I went with Sass because it is the most used and they declare variables with **$** instead of **@** like LESS does. I am curious to try PostCSS in the future. 
 - [Sass Website](https://sass-lang.com/guide) - You gotta start somewhere! This allowed me to get the SCSS foundations I needed.
+- [Mixins vs Extend](https://kirillibrahim.medium.com/sass-mixin-vs-extend-ac4dfb9892c4) - A brief but helpful article on when to use a mixin or extend/inheritance.
 
 ## Author
 
