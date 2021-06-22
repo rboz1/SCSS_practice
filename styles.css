@@ -1,20 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap");
 main .brand, main .standout {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 15%;
-  line-height: 1.7em;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  line-height: 170%;
+  width: 70%;
 }
 
 main .brand p, main .standout p {
@@ -23,15 +15,15 @@ main .brand p, main .standout p {
 }
 
 main .brand h2, main .standout h2 {
-  font-size: 2.8rem;
+  font-size: 280%;
   font-weight: 900;
-  line-height: 1.3em;
+  line-height: 130%;
 }
 
 main .brand .learn, main .standout .learn {
   text-transform: uppercase;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 7%;
 }
 
 main .brand h2, main .standout h2, main .brand .learn, main .standout .learn {
@@ -46,12 +38,14 @@ a {
 .container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
   -ms-grid-rows: 0.9fr 3fr (0.5fr)[2];
       grid-template-rows: 0.9fr 3fr repeat(2, 0.5fr);
-      grid-template-areas: "header header" "main main" "images images" "footer footer";
+      grid-template-areas: "head head" "main main" "images images" "footer footer";
   margin: 0;
+  width: 100vw;
+  height: 100vh;
 }
 
 .container img {
@@ -62,7 +56,7 @@ header {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
-  grid-area: header;
+  grid-area: head;
   background-image: url(images/desktop/image-header.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -71,8 +65,8 @@ header {
   display: grid;
   -ms-grid-columns: 100%;
       grid-template-columns: 100%;
-  -ms-grid-rows: 0.5fr 3fr;
-      grid-template-rows: 0.5fr 3fr;
+  -ms-grid-rows: 0.5fr 2fr;
+      grid-template-rows: 0.5fr 2fr;
       grid-template-areas: "navbar" "arrow";
 }
 
@@ -91,6 +85,7 @@ header nav .logo {
 header nav ul {
   list-style: none;
   padding-right: 2%;
+  padding-top: 2%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -158,7 +153,7 @@ header div h1 {
   padding-bottom: 5%;
   text-transform: uppercase;
   letter-spacing: 10px;
-  font-size: 50px;
+  font-size: 300%;
 }
 
 main {
@@ -379,12 +374,14 @@ main .container-clients .clients div p:first-child {
   font-family: "Fraunces", serif;
   color: #23303e;
   font-size: 1.1rem;
+  margin-bottom: 0;
 }
 
 main .container-clients .clients div p:last-child {
   font-family: "Barlow", sans-serif;
   color: #a7abae;
   font-size: 0.9rem;
+  margin-top: 0;
 }
 
 .images {
@@ -397,9 +394,14 @@ main .container-clients .clients div p:last-child {
 .images .gallery {
   list-style: none;
   padding: 0;
+  margin: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.images img {
+  min-height: 100%;
 }
 
 footer {
@@ -407,7 +409,7 @@ footer {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: footer;
-  background-color: #e6e6e6;
+  background-color: rgba(69, 140, 126, 0.5);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -418,9 +420,15 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+footer svg {
+  fill: #2C7566;
 }
 
 footer nav ul {
@@ -436,8 +444,230 @@ footer nav ul {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  padding-bottom: 10%;
+}
+
+footer nav .footer-nav li {
+  padding-right: 10%;
+  padding-left: 10%;
+}
+
+footer nav .footer-nav a {
+  color: #458c7e;
+  font-family: "Barlow", sans-serif;
+}
+
+footer nav .footer-nav a:hover {
+  color: white;
+}
+
+footer nav .social li {
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+footer nav .social svg {
+  fill: #2C7566;
+}
+
+footer nav .social svg:hover {
+  fill: white;
+}
+
+footer .attribution {
+  font-family: "Barlow", sans-serif;
+  color: #458c7e;
+}
+
+footer .attribution a {
+  color: #23303e;
+  text-decoration: underline;
+}
+
+@media only screen and (min-width: 914px) {
+  .mobile-break {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .menu {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1025px) {
+  main .brand, main .standout {
+    padding: 10% 0 10% 0;
+    width: 83%;
+  }
+  main .brand p, main .standout p {
+    text-align: center;
+  }
+  main .brand h2, main .standout h2, main .brand .learn, main .standout .learn {
+    text-align: center;
+  }
+  .container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    -ms-grid-rows: 0.9fr 3fr (0.5fr)[2];
+        grid-template-rows: 0.9fr 3fr repeat(2, 0.5fr);
+        grid-template-areas: "head" "main" "images" "footer";
+  }
+  header {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: head;
+  }
+  header h1 {
+    text-align: center;
+    margin-bottom: 0;
+  }
+  header nav ul .menu {
+    padding-right: 5%;
+    fill: white;
+  }
+  header nav ul .menu:hover {
+    fill: #23303e;
+  }
+  header nav ul .right-nav {
+    display: none;
+  }
+  header div {
+    padding-bottom: 60%;
+  }
+  main {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: main;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: (0.1fr)[7];
+        grid-template-rows: repeat(7, 0.1fr);
+        grid-template-areas: "egg" "brand" "wine" "standout" "graphic" "photo" "feedback";
+  }
+  main .egg, main .glass, main .cherry, main .clementine {
+    min-width: 100%;
+  }
+  main .cherry, main .clementine {
+    min-height: 100%;
+  }
+  main .egg {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: egg;
+  }
+  main .brand {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: brand;
+  }
+  main .glass {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: wine;
+  }
+  main .standout {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    grid-area: standout;
+  }
+  main .graphic {
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
+    grid-area: graphic;
+  }
+  main .graphic .text-overlay {
+    padding: 15%;
+    height: 8em;
+  }
+  main .photo {
+    -ms-grid-row: 6;
+    -ms-grid-column: 1;
+    grid-area: photo;
+  }
+  main .photo .text-overlay {
+    padding: 15%;
+    height: 8em;
+  }
+  main .container-clients {
+    -ms-grid-row: 7;
+    -ms-grid-column: 1;
+    grid-area: feedback;
+  }
+  main .container-clients .clients {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "emily"  "thomas"  "jennie";
+    -webkit-column-gap: none;
+            column-gap: none;
+    padding-top: 5%;
+  }
+  main .container-clients .clients .emily {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: emily;
+  }
+  main .container-clients .clients .thomas {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: thomas;
+  }
+  main .container-clients .clients .jennie {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: jennie;
+  }
+  main .container-clients .clients img {
+    margin-bottom: 2%;
+    margin-top: 10%;
+    height: 100%;
+  }
+  main .container-clients .clients img + p {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+  .images {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: images;
+  }
+  .images .gallery {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "img1 img2" "img3 img4";
+  }
+  .images .gallery .milk {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: img1;
+  }
+  .images .gallery .orange {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: img2;
+  }
+  .images .gallery .cone {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: img3;
+  }
+  .images .gallery .cube {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: img4;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
