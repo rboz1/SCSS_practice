@@ -527,10 +527,6 @@ footer .attribution a {
   }
   header nav ul .menu {
     padding-right: 5%;
-    fill: white;
-  }
-  header nav ul .menu:hover {
-    fill: #23303e;
   }
   header nav ul .right-nav {
     display: none;
@@ -552,9 +548,6 @@ footer .attribution a {
   }
   main .egg, main .glass, main .cherry, main .clementine {
     min-width: 100%;
-  }
-  main .cherry, main .clementine {
-    min-height: 100%;
   }
   main .egg {
     -ms-grid-row: 1;

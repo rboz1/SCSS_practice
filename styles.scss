@@ -458,10 +458,6 @@ footer{
             ul{
                 .menu{
                     padding-right: 5%;
-                    fill: $white;
-                }
-                .menu:hover{
-                    fill:$dark-grey-blue
                 }
 
                 .right-nav{
@@ -496,9 +492,9 @@ footer{
             min-width: 100%;
         }
 
-        .cherry, .clementine{
-            min-height: 100%;
-        }
+        // .cherry, .clementine{
+        //     min-height: 100%;
+        // }
 
         .egg{
             grid-area: egg;
