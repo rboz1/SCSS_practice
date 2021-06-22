@@ -57,7 +57,7 @@ header {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: head;
-  background-image: url(images/desktop/image-header.jpg);
+  background-image: url("images/desktop/image-header.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -490,12 +490,6 @@ footer .attribution a {
   }
 }
 
-@media screen and (min-width: 1025px) {
-  .menu {
-    display: none;
-  }
-}
-
 @media only screen and (max-width: 1025px) {
   main .brand, main .standout {
     padding: 10% 0 10% 0;
@@ -520,16 +514,14 @@ footer .attribution a {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     grid-area: head;
+    background-image: url("images/mobile/image-header.jpg");
+  }
+  header .button {
+    display: none;
   }
   header h1 {
     text-align: center;
     margin-bottom: 0;
-  }
-  header nav ul .menu {
-    padding-right: 5%;
-  }
-  header nav ul .right-nav {
-    display: none;
   }
   header div {
     padding-bottom: 60%;
@@ -548,6 +540,9 @@ footer .attribution a {
   }
   main .egg, main .glass, main .cherry, main .clementine {
     min-width: 100%;
+  }
+  main .cherry, main .clementine {
+    min-height: 100%;
   }
   main .egg {
     -ms-grid-row: 1;
