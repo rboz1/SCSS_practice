@@ -465,7 +465,7 @@ footer{
         }
 
         .menu{
-            padding-right: 5%;
+            padding-right: 8%;
         }
 
         div{
@@ -569,18 +569,35 @@ footer{
             grid-template-areas: 
             "img1 img2"
             "img3 img4";
+
     
             .milk{
                 grid-area: img1;
+
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
             }
             .orange{
                 grid-area: img2;
+
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
             }
             .cone{
                 grid-area: img3;
+
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
             }
             .cube{
                 grid-area: img4;
+
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
             }
     
         }

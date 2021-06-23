@@ -533,7 +533,7 @@ footer .attribution a {
     display: none;
   }
   header .menu {
-    padding-right: 5%;
+    padding-right: 8%;
   }
   header div {
     padding-bottom: 60%;
@@ -652,21 +652,37 @@ footer .attribution a {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     grid-area: img1;
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .images .gallery .orange {
     -ms-grid-row: 1;
     -ms-grid-column: 2;
     grid-area: img2;
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .images .gallery .cone {
     -ms-grid-row: 2;
     -ms-grid-column: 1;
     grid-area: img3;
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .images .gallery .cube {
     -ms-grid-row: 2;
     -ms-grid-column: 2;
     grid-area: img4;
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .attribution {
     text-align: center;
