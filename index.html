@@ -35,10 +35,19 @@
             <p><a class="learn" href="#">Learn more</a></p>
         </section>
 
-        <img class="egg" src="images/desktop/image-transform.jpg" alt="Image of an egg">
 
-        <img class="glass" src="images/desktop/image-stand-out.jpg" alt="Image of wine glass">
+        <picture class="egg">
+            <source srcset="images/desktop/image-transform.jpg" media="(min-width: 751px)"/>
+            <source srcset="images/mobile/image-transform.jpg" media="(max-width: 750px)"> 
+            <img src="images/desktop/image-transform.jpg" alt="Image of an egg"/>
+          </picture>
 
+          <picture class="glass">
+            <source srcset="images/desktop/image-stand-out.jpg" media="(min-width: 751px)"/>
+            <source srcset="images/mobile/image-stand-out.jpg" media="(max-width: 750px)"> 
+            <img src="images/desktop/image-stand-out.jpg" alt="Image of an egg"/>
+          </picture>
+    
         <section class="standout">
             <h2>Stand out to the right audience</h2>
             <p>Using a collaborative formula of designers, researchers, photographers, videographers, and copywriters, we’ll build and extend your brand in digital places.</p>
@@ -46,7 +55,12 @@
         </section>
 
         <section class="graphic">
-            <img class="cherry" src="images/desktop/image-graphic-design.jpg" alt="Image of cherries">
+            <picture class="cherry">
+                <source srcset="images/desktop/image-graphic-design.jpg" media="(min-width: 751px)"/>
+                <source srcset="images/mobile/image-graphic-design.jpg" media="(max-width: 750px)"> 
+                <img src="images/desktop/image-graphic-design.jpg" alt="Image of an cherries"/>
+              </picture>
+
             <div class="text-overlay">
                 <h3>Graphic design</h3>
                 <p>Great design makes you memorable. We deliver artwork that underscores your brand message and captures potential clients’ attention.</p>
@@ -54,7 +68,12 @@
         </section>
 
         <section class="photo">
-            <img class="clementine" src="images/desktop/image-photography.jpg" alt="Image of orange with stem">
+            <picture class="clementine">
+                <source srcset="images/desktop/image-photography.jpg" media="(min-width: 751px)"/>
+                <source srcset="images/mobile/image-photography.jpg" media="(max-width: 750px)"> 
+                <img src="images/desktop/image-photography.jpg" alt="Image of orange with stem"/>
+              </picture>
+
             <div class="text-overlay">
                 <h3>Photography</h3>
                 <p>Increase your credibility by getting the most stunning, high-quality photos that improve your business image.</p>
@@ -96,10 +115,26 @@
 
     <section class="images">
         <ul class="gallery">
-            <li class="milk"><img src="images/desktop/image-gallery-milkbottles.jpg" alt="Image of milk bottles"></li>
-            <li class="orange"><img src="images/desktop/image-gallery-orange.jpg" alt="Image of orange"></li>
-            <li class="cone"><img src="images/desktop/image-gallery-cone.jpg" alt="Image of ice cream cone"></li>
-            <li class="cube"><img src="images/desktop/image-gallery-sugarcubes.jpg" alt="Image of stacked sugar cubes"></li>
+            <li class="milk"><picture>
+                <source srcset="images/desktop/image-gallery-milkbottles.jpg" media="(min-width: 751px)">
+                <source srcset="images/mobile/image-gallery-milkbottles.jpg" media="(max-width: 750px)">
+                <img src="images/desktop/image-gallery-milkbottles.jpg" alt="Image of milk bottles">
+            </picture></li>
+            <li class="orange"><picture>
+                <source srcset="images/desktop/image-gallery-orange.jpg" media="(min-width: 751px)">
+                <source srcset="images/mobile/image-gallery-orange.jpg" media="(max-width: 750px)">
+                <img src="images/desktop/image-gallery-orange.jpg" alt="Image of orange">
+            </picture></li>
+            <li class="cone"><picture>
+                <source srcset="images/desktop/image-gallery-cone.jpg" media="(min-width: 751px)">
+                <source srcset="images/mobile/image-gallery-cone.jpg" media="(max-width: 750px)">
+                <img src="images/desktop/image-gallery-cone.jpg" alt="Image of ice cream cone">
+            </picture></li>
+            <li class="cube"><picture>
+                <source srcset="images/desktop/image-gallery-sugarcubes.jpg" media="(min-width: 751px)">
+                <source srcset="images/mobile/image-gallery-sugar-cubes.jpg" media="(max-width: 750px)">
+                <img src="images/desktop/image-gallery-sugarcubes.jpg" alt="Image of stacked sugar cubes">
+            </picture></li>
         </ul>
     </section>
 
