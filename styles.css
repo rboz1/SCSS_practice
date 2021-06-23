@@ -648,9 +648,6 @@ footer .attribution a {
         grid-template-rows: 50% 50%;
         grid-template-areas: "img1 img2" "img3 img4";
   }
-  .images .gallery img {
-    display: block;
-  }
   .images .gallery .milk {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
