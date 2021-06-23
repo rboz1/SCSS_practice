@@ -652,6 +652,7 @@ footer .attribution a {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     grid-area: img1;
+    height: auto;
   }
   .images .gallery .orange {
     -ms-grid-row: 1;
