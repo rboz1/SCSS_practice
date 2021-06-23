@@ -563,8 +563,8 @@ footer{
 
         .gallery{
             display: grid;
-            grid-template-columns: 50% 50%;
-            grid-template-rows: 50% 50%;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
 
             grid-template-areas: 
             "img1 img2"
@@ -573,31 +573,15 @@ footer{
     
             .milk{
                 grid-area: img1;
-
-                height: 100%;
-                width: 100%;
-                object-fit: cover;
             }
             .orange{
                 grid-area: img2;
-
-                height: 100%;
-                width: 100%;
-                object-fit: cover;
             }
             .cone{
                 grid-area: img3;
-
-                height: 100%;
-                width: 100%;
-                object-fit: cover;
             }
             .cube{
                 grid-area: img4;
-
-                height: 100%;
-                width: 100%;
-                object-fit: cover;
             }
     
         }

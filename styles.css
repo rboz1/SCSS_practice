@@ -642,47 +642,31 @@ footer .attribution a {
   .images .gallery {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 50% 50%;
-        grid-template-columns: 50% 50%;
-    -ms-grid-rows: 50% 50%;
-        grid-template-rows: 50% 50%;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
         grid-template-areas: "img1 img2" "img3 img4";
   }
   .images .gallery .milk {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     grid-area: img1;
-    height: 100%;
-    width: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
   }
   .images .gallery .orange {
     -ms-grid-row: 1;
     -ms-grid-column: 2;
     grid-area: img2;
-    height: 100%;
-    width: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
   }
   .images .gallery .cone {
     -ms-grid-row: 2;
     -ms-grid-column: 1;
     grid-area: img3;
-    height: 100%;
-    width: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
   }
   .images .gallery .cube {
     -ms-grid-row: 2;
     -ms-grid-column: 2;
     grid-area: img4;
-    height: 100%;
-    width: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
   }
   .attribution {
     text-align: center;
