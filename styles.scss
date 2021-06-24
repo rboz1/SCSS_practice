@@ -326,12 +326,29 @@ main{
         list-style: none;
         padding: 0;
         margin: 0;
-        display: flex;
+        
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        "milk fruit cone cube";
+
+        .milk{
+            grid-area: milk;
+        }
+         .orange{
+            grid-area: fruit;
+        }
+          .cone{
+            grid-area: cone;
+        }
+          .cube{
+            grid-area: cube;
+        }
+
+        
     }
 
-    img{
-        min-height: 100%;
-    }
 
 }
 
@@ -402,10 +419,11 @@ footer{
 }
 
 //Media Queries
-@media only screen and (min-width: 914px){
+@media only screen and (min-width: 751px){
     .mobile-break{
         display: none;
     }
+
 }
 
 @media screen and (min-width: 750px){
@@ -426,12 +444,6 @@ footer{
                 bottom: 42%;
             }
         }
-    }
-}
-
-@media screen and (max-width: 1210px) and (min-width: 751px){
-    .blurb{
-        font-size: 1.1vw;
     }
 }
 
@@ -581,25 +593,26 @@ footer{
     .images{
         grid-area: images;
 
-        .gallery{
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+         .gallery{
+             display: grid;
+             grid-template-columns: 1fr 1fr;
+             grid-template-rows: 1fr 1fr;
 
-            grid-template-areas: 
-             "img1 img2"
-             "img3 img4";
+             grid-template-areas: 
+              "img1 img2"
+              "img3 img4";
 
 
-            .milk{
+             .milk{
                 grid-area: img1;
             }
-            .orange{
+             .orange{
                 grid-area: img2;
             }
-             .cone{
+              .cone{
                 grid-area: img3;
-             }
-             .cube{
+            }
+              .cube{
                 grid-area: img4;
             }
 

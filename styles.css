@@ -396,13 +396,37 @@ main .container-clients .clients div p:last-child {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+      grid-template-areas: "milk fruit cone cube";
 }
 
-.images img {
-  min-height: 100%;
+.images .gallery .milk {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: milk;
+}
+
+.images .gallery .orange {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: fruit;
+}
+
+.images .gallery .cone {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: cone;
+}
+
+.images .gallery .cube {
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  grid-area: cube;
 }
 
 footer {
@@ -485,7 +509,7 @@ footer .attribution a {
   text-decoration: underline;
 }
 
-@media only screen and (min-width: 914px) {
+@media only screen and (min-width: 751px) {
   .mobile-break {
     display: none;
   }
@@ -504,12 +528,6 @@ footer .attribution a {
   main .photo .text-overlay, main .graphic .text-overlay {
     padding: 0;
     bottom: 42%;
-  }
-}
-
-@media screen and (max-width: 1210px) and (min-width: 751px) {
-  .blurb {
-    font-size: 1.1vw;
   }
 }
 
@@ -660,6 +678,8 @@ footer .attribution a {
     display: grid;
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
         grid-template-areas: "img1 img2" "img3 img4";
   }
   .images .gallery .milk {
