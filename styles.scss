@@ -579,33 +579,31 @@ footer{
     }
 
     .images{
-    //     grid-area: images;
+        grid-area: images;
 
-         .gallery{
+        .gallery{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
 
-             display: grid;
-             grid-template-columns: 1fr 1fr;
-             grid-template-rows: 1fr 1fr;
-
-             grid-template-areas: 
+            grid-template-areas: 
              "img1 img2"
              "img3 img4";
 
 
-             .milk{
-                 grid-area: img1;
-             }
-             .orange{
-                 grid-area: img2;
-             }
+            .milk{
+                grid-area: img1;
+            }
+            .orange{
+                grid-area: img2;
+            }
              .cone{
-                 grid-area: img3;
+                grid-area: img3;
              }
              .cube{
-                 grid-area: img4;
-             }
+                grid-area: img4;
+            }
 
-         }
+        }
 
     }
 
