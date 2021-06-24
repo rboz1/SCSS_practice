@@ -574,6 +574,8 @@ footer{
             .milk{
                 grid-area: img1;
                 height: auto;
+                width: auto;
+                object-fit: contain;
             }
             .orange{
                 grid-area: img2;
