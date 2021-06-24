@@ -651,13 +651,33 @@ footer .attribution a {
     width: 70%;
   }
   .images .gallery {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "img1 img2" "img3 img4";
+  }
+  .images .gallery .milk {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: img1;
+  }
+  .images .gallery .orange {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: img2;
+  }
+  .images .gallery .cone {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: img3;
+  }
+  .images .gallery .cube {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: img4;
   }
   .attribution {
     text-align: center;
