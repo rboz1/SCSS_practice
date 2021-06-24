@@ -414,6 +414,26 @@ footer{
     }
     
 }
+@media screen and (max-width: 1130px) and (min-width: 751px){
+    .standout, .brand{
+        font-size: 70%;
+    }
+
+    main{
+        .photo, .graphic{
+            .text-overlay{
+                padding: 0;
+                bottom: 42%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1210px) and (min-width: 751px){
+    .blurb{
+        font-size: 1.1vw;
+    }
+}
 
 @media only screen and (max-width: 750px){
 
@@ -561,28 +581,30 @@ footer{
     .images{
         grid-area: images;
 
-        // .gallery{
-        //     display: grid;
-        //     grid-template-columns: 1fr 1fr;
-        //     grid-template-rows: 1fr 1fr;
+        .gallery{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
 
-        //     grid-template-areas: 
-        //     "img1 img2"
-        //     "img3 img4";
+            grid-template-areas: 
+            "img1 img2"
+            "img3 img4";
 
     
-        //     .milk{
-        //         grid-area: img1;
-        //     }
-        //     .orange{
-        //         grid-area: img2;
-        //     }
-        //     .cone{
-        //         grid-area: img3;
-        //     }
-        //     .cube{
-        //         grid-area: img4;
-        //     }
+            .milk{
+                grid-area: img1;
+                object-fit: contain;
+            }
+            .orange{
+                grid-area: img2;
+                height: 100% !important;
+            }
+            .cone{
+                grid-area: img3;
+            }
+            .cube{
+                grid-area: img4;
+            }
     
         }
 

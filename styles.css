@@ -497,6 +497,22 @@ footer .attribution a {
   }
 }
 
+@media screen and (max-width: 1130px) and (min-width: 751px) {
+  .standout, .brand {
+    font-size: 70%;
+  }
+  main .photo .text-overlay, main .graphic .text-overlay {
+    padding: 0;
+    bottom: 42%;
+  }
+}
+
+@media screen and (max-width: 1210px) and (min-width: 751px) {
+  .blurb {
+    font-size: 1.1vw;
+  }
+}
+
 @media only screen and (max-width: 750px) {
   main .brand, main .standout {
     padding: 10% 0 10% 0;
@@ -652,11 +668,14 @@ footer .attribution a {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     grid-area: img1;
+    -o-object-fit: contain;
+       object-fit: contain;
   }
   .images .gallery .orange {
     -ms-grid-row: 1;
     -ms-grid-column: 2;
     grid-area: img2;
+    height: 100% !important;
   }
   .images .gallery .cone {
     -ms-grid-row: 2;
