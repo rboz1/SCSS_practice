@@ -23,7 +23,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./we_are_creatives_challenge.jpg)
+![](./users/rachelbozadjian/desktop/we_are_creatives_challenge.jpg)
 
 Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
 
@@ -93,7 +93,7 @@ I want to continue using Grid, Flexbox, and (the entire point of this project) S
 - [Deciding on a CSS Preprocessor](https://www.lambdatest.com/blog/css-preprocessors-sass-vs-less-vs-stylus-with-examples/?utm_source=Reddit&utm_medium=blog&utm_campaign=PM-080720-1&utm_term=OrganicPosting) - A great article to understand the pros and cons the many CSS preprocessors out there. I went with Sass because it is the most used and they declare variables with **$** instead of **@** like LESS does. I am curious to try PostCSS in the future. 
 - [Sass Website](https://sass-lang.com/guide) - You gotta start somewhere! This allowed me to get the SCSS foundations I needed.
 - [Mixins vs Extend](https://kirillibrahim.medium.com/sass-mixin-vs-extend-ac4dfb9892c4) - A brief but helpful article on when to use a mixin or extend/inheritance.
-- [Grid Critters] (https://gridcritters.com/) - A game for learning Grid that I want to play!
+- [Grid Critters](https://gridcritters.com/) - A game for learning Grid that I want to play!
 
 ## Author
 
