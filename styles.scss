@@ -578,10 +578,13 @@ footer{
 
     }
 
-    // .images{
+    .images{
     //     grid-area: images;
 
-    //     .gallery{
+         .gallery{
+            display: flex;
+            flex-flow: row wrap;
+
     //         display: grid;
     //         grid-template-columns: 1fr 1fr;
     //         grid-template-rows: 1fr 1fr;
@@ -604,9 +607,9 @@ footer{
     //             grid-area: img4;
     //         }
     
-    //     }
+         }
 
-    // }
+    }
 
     .attribution{
         text-align: center;

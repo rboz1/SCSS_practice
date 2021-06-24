@@ -650,6 +650,15 @@ footer .attribution a {
   main .container-clients .clients img + p {
     width: 70%;
   }
+  .images .gallery {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+  }
   .attribution {
     text-align: center;
   }
