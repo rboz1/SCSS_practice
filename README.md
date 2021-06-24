@@ -84,7 +84,7 @@ I learned how to use the ```<picture>``` tag in **HTML**, which was really usefu
 
 I was also pretty excited to learn how to use mixins with **SCSS**, it helped with code re-use a lot. Especially when I had the same layouts for 2 sections they used different font colors! I was able to use a mixin and pass in the correct font color for each section.
  
-I want to continue using Grid, Flexbox, and (the entire point of this project) SCSS! SCSS is amazing. I love the nesting, mixins, and being able to use variables.
+I want to continue using **Grid**, **Flexbox**, and (the entire point of this project) **SCSS**! **SCSS** is amazing. I love the nesting, mixins, and being able to use variables.
 
 ### Useful resources
 
