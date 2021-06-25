@@ -571,14 +571,11 @@ footer .attribution a {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
     margin-top: 5%;
     margin-bottom: 10%;
   }
   header nav .menu {
-    margin-left: 59%;
+    margin-left: 48%;
     margin-right: 6%;
   }
   header .title {
@@ -591,7 +588,9 @@ footer .attribution a {
     letter-spacing: 5px;
   }
   .right-nav {
-    display: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
   .toggle-menu {
     display: -webkit-box;
@@ -604,7 +603,7 @@ footer .attribution a {
     position: absolute;
     width: 89%;
     left: 5%;
-    top: 15%;
+    top: 20%;
     padding: 0;
     background-color: white;
   }

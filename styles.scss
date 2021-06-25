@@ -493,14 +493,13 @@ footer{
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-                justify-content: space-evenly;
 
                 margin-top: 5%;
                 margin-bottom: 10%;
             }
 
             .menu{
-                margin-left: 59%;
+                margin-left: 48%;
                 margin-right: 6%;
             }
         }
@@ -519,7 +518,7 @@ footer{
     }
 
     .right-nav{
-        display: none;
+        display: flex;
     }
 
 
@@ -532,7 +531,7 @@ footer{
         width: 89%;
 
         left: 5%;
-        top: 15%;
+        top: 20%;
 
         padding: 0;
         background-color: $white;
