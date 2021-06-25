@@ -38,8 +38,8 @@ a {
 .container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 50% 50%;
-      grid-template-columns: 50% 50%;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
   -ms-grid-rows: 0.9fr 3fr (0.5fr)[2];
       grid-template-rows: 0.9fr 3fr repeat(2, 0.5fr);
       grid-template-areas: "head head" "main main" "images images" "footer footer";
@@ -128,7 +128,7 @@ header nav ul a:hover {
   color: #23303e;
 }
 
-header div {
+header .title {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: arrow;
@@ -148,7 +148,7 @@ header div {
   padding-bottom: 15%;
 }
 
-header div h1 {
+header .title h1 {
   font-family: "Fraunces", serif;
   color: white;
   padding-bottom: 5%;
@@ -560,23 +560,66 @@ footer .attribution a {
     grid-area: head;
     background-image: url("images/mobile/image-header.jpg");
   }
-  header .button {
-    display: none;
+  header nav .logo-burger {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    margin-top: 5%;
+    margin-bottom: 10%;
   }
-  header .right-nav {
-    display: none;
+  header nav .menu {
+    margin-left: 59%;
+    margin-right: 6%;
   }
-  header .menu {
-    padding-right: 8%;
-  }
-  header div {
+  header .title {
     padding-bottom: 60%;
   }
-  header div h1 {
+  header .title h1 {
     text-align: center;
     margin-bottom: 10%;
     margin-top: 15%;
     letter-spacing: 5px;
+  }
+  .right-nav {
+    display: none;
+  }
+  .toggle-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: absolute;
+    width: 89%;
+    left: 5%;
+    top: 15%;
+    padding: 0;
+    background-color: white;
+  }
+  .toggle-menu li {
+    padding-top: 10%;
+    padding-bottom: 10%;
+  }
+  .toggle-menu li a {
+    color: #818498;
+  }
+  .toggle-menu li .button {
+    background-color: #fad400;
+  }
+  .toggle-menu li .button:hover {
+    background-color: #fad400;
   }
   main {
     -ms-grid-row: 2;

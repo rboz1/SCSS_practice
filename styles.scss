@@ -81,7 +81,7 @@ a{
 
 .container{
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: repeat(2,1fr);
     grid-template-rows: 0.9fr 3fr repeat(2, 0.5fr);
     grid-template-areas: 
         "head head"
@@ -158,7 +158,7 @@ header{
 
         }
     }
-    div{
+    .title{
         grid-area: arrow;
 
         display: flex;
@@ -488,19 +488,24 @@ footer{
         grid-area: head;
         background-image: url("images/mobile/image-header.jpg");
 
-        .button{
-            display: none;
+        nav{
+            .logo-burger{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-evenly;
+
+                margin-top: 5%;
+                margin-bottom: 10%;
+            }
+
+            .menu{
+                margin-left: 59%;
+                margin-right: 6%;
+            }
         }
 
-        .right-nav{
-            display: none;
-        }
-
-        .menu{
-            padding-right: 8%;
-        }
-
-        div{
+        .title{
             padding-bottom: 60%;
 
             h1{
@@ -510,6 +515,43 @@ footer{
                 letter-spacing: 5px;
             }
         }
+  
+    }
+
+    .right-nav{
+        display: none;
+    }
+
+
+    .toggle-menu{
+        display: flex;
+        flex-direction: column;
+
+        position: absolute;
+
+        width: 89%;
+
+        left: 5%;
+        top: 15%;
+
+        padding: 0;
+        background-color: $white;
+
+        li{
+            padding-top: 10%;
+            padding-bottom: 10%;
+            a{
+                color: $grey;
+            }
+
+            .button{
+                background-color: $yellow;
+            }
+            .button:hover{
+                background-color: $yellow;
+            }
+        }
+
     }
 
     main{

@@ -1,9 +1,11 @@
 function toggleMenu(){
-    var x = document.getElementById("myLinks");
-    if (x.style.display === "block") {
-        x.style.display = "none";} 
-        else {
-          x.style.display = "block";
-        }
-    }   
+  let menu = document.getElementsByClassName("right-nav");
+
+  for(i=0; i < menu.length; i++){
+    if (menu[i].style.display === "" || menu[i].style.display === "none"){
+      menu[i].style.display = "flex";
+     }else{
+       menu[i].style.display = "none";
+     }
+   }
 }
