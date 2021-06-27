@@ -594,7 +594,7 @@ footer{
 
 //Responsive text
 
-@media screen and (min-width: 752px) and (max-width: 1260px){
+@media screen and (min-width: 751px) and (max-width: 1260px){
     @mixin overlay($theme: $graphic){
         .text-overlay{
             padding-left: 2%;
@@ -650,7 +650,7 @@ footer{
     }
 }
 
-@media screen and (min-width: 752px) and (max-width: 965px) {
+@media screen and (min-width: 751px) and (max-width: 965px) {
     @mixin card($hover-color, $color) {
         text-align: center;
     }
@@ -755,4 +755,16 @@ footer{
         }
     }
 
+}
+
+@media screen and (min-width: 375px) and (max-width: 414px) {
+    header{
+        .title{
+            h1{
+                letter-spacing: 5px;
+            }
+            
+        }
+    }
+    
 }
