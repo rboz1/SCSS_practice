@@ -4,7 +4,7 @@
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
+  - [Link to Site](#link-to-site)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
@@ -21,7 +21,9 @@ Users should be able to:
 - View the optimal layout for the site depending on their device's screen size
 - See hover states for all interactive elements on the page
 
-### Screenshot
+### Link to Site
+
+[Active site link](https://rboz1.github.io/SCSS_practice/) 
 
 Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
 
@@ -33,6 +35,8 @@ Add a screenshot of your solution. The easiest way to do this is to use Firefox 
 - CSS3 (Sass/SCSS)
 - Flexbox
 - CSS Grid
+- Mobile-first
+- Responsive design!
 
 ### What I learned
 
@@ -74,6 +78,21 @@ Proud of this code!
         opacity: 0.7;
     }
 }
+```
+
+```
+function displayLargeNav(){
+  let width = window.innerWidth;
+  let menu = document.getElementsByClassName("toggle-menu");
+
+  if (width >= 752){
+    menu[0].style.display = "flex";
+  }else{
+    menu[0].style.display = "none";
+  }
+ }
+
+window.onresize = displayLargeNav;
 ```
 
 ### Continued development
