@@ -106,7 +106,7 @@ $footer-svg: #2C7566;
     height: 100vh;
 
     img{
-        max-width: 100%;
+        // max-width: 100%;
         display: block;
     }
 }
@@ -594,7 +594,7 @@ footer{
 
 //Responsive text
 
-@media screen and (min-width: 751px) and (max-width: 1260px){
+@media screen and (min-width: 752px) and (max-width: 1260px){
     @mixin overlay($theme: $graphic){
         .text-overlay{
             padding-left: 2%;
@@ -650,7 +650,7 @@ footer{
     }
 }
 
-@media screen and (min-width: 751px) and (max-width: 965px) {
+@media screen and (min-width: 752px) and (max-width: 965px) {
     @mixin card($hover-color, $color) {
         text-align: center;
     }
