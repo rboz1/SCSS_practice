@@ -6,7 +6,10 @@ $font-headers:'Fraunces', serif;
 //Font colors
 $white: hsl(0, 0%, 100%);
 $yellow: hsl(51, 100%, 49%);
+$btn-hover: hsla(0, 0%, 100%, 0.2);
+$hover-yellow: hsla(51, 100%, 49%, 0.3);
 $red: hsl(7, 99%, 70%);
+$hover-red: hsla(7, 99%, 70%,0.3);
 $dark-grey-blue: hsl(212, 27%, 19%);
 $dark-grey: hsl(213, 9%, 39%);
 $grey: hsl(232, 10%, 55%);
@@ -15,23 +18,20 @@ $graphic: hsl(167, 40%, 24%);
 $photo: hsl(198, 62%, 26%);
 $footer-bg: hsla(168, 34%, 41%,0.5);
 $footer-text: hsl(168, 34%, 41%);
+$footer-svg: #2C7566;
 
-// Extended styles and mixins
+//Mobile
 @mixin overlay($theme: $graphic){
-
     .text-overlay{
         color: $theme;
         position: absolute;
-    
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-    
-        bottom: 2%;
-        padding: 27%;
-        line-height: 1.7em;
-        height: 3em;
         text-align: center;
+
+        padding: 5%;
+        line-height: 1.7em;
+        margin-top: 90%;
     }
 
     h3{
@@ -45,11 +45,13 @@ $footer-text: hsl(168, 34%, 41%);
     }
 }
 
-%card {
+@mixin card($hover-color, $color) {
     justify-self: center;
     align-self: center;
+    text-align: center;
     line-height: 170%;
-    width: 70%;
+    padding: 10% 0 10% 0;
+    width: 75%;
 
     p{
         color: $grey;
@@ -57,37 +59,47 @@ $footer-text: hsl(168, 34%, 41%);
     }
 
     h2{
-        font-size: 280%;
+        font-size: 200%;
         font-weight: 900;
         line-height: 130%;
-    }
-
-    .learn{
-        text-transform: uppercase;
-        text-decoration: none;
-        border-radius: 7%;
     }
 
     h2, .learn{
         font-family: $font-headers;
         color: $dark-grey-blue;
     }
+
+    .learn{
+        text-decoration: none;
+        text-transform: uppercase;
+        border-radius: 7%;
+        border-bottom: 5px solid $hover-color;
+    }
+
+    .learn:hover{
+        border-bottom: 5px solid $color;
+    }
 }
 
-// Link Styling
-a{
-    text-decoration: none;
+%footer{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10%;
 }
 
 .container{
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-template-rows: 0.9fr 3fr repeat(2, 0.5fr);
+    grid-template-columns: 1fr;
+    grid-template-rows: 700px repeat(3, 1fr);
     grid-template-areas: 
-        "head head"
-        "main main"
-        "images images"
-        "footer footer";
+        "head"
+        "main"
+        "images"
+        "footer";
 
     margin: 0;
     width: 100vw;
@@ -101,40 +113,56 @@ a{
 
 header{
     grid-area: head;
-    background-image: url("images/desktop/image-header.jpg");
+    background-image: url("images/mobile/image-header.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
 
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 0.5fr 2fr;
-    grid-template-areas: 
-    "navbar"
-    "arrow";
-
     nav{
-        grid-area: navbar;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 7%;
 
         .logo{
-            flex-grow: 1;
-            
+            margin-left: 6%;
         }
+        .burger{
+            margin-right: 6%;
+        }
+    }
 
-        ul{
-            list-style: none;
-            padding-right: 2%;
-            padding-top: 5%;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
+    .right-nav{
+        display: none;
+    }
 
-            .right-nav{
-                padding-left: 5%;
+    .toggle-menu{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        width: 89%;
+        left: 5%;
+        top: 20%;
+        padding: 0;
+        background-color: $white;
+
+        li{
+            padding-top: 10%;
+            padding-bottom: 10%;
+            
+            a{
+                text-decoration: none;
+                font-family: $font-body;
+                color: $grey;
+            }
+            a:hover{
+                color: $dark-grey-blue;
             }
 
             .button{
-                background-color: $white;
+                background-color: $yellow;
                 border: none;
                 border-radius: 25px;
                 color: $dark-grey-blue;
@@ -143,120 +171,72 @@ header{
                 text-transform: uppercase;
                 text-align: center;
             }
-
             .button:hover{
-                background-color: hsla(0, 0%, 100%, 0.2);
+                background-color: $yellow;
                 color: $white;
-            }
-
-            a{
-                font-family: $font-body;
-                color: $white; 
-            }
-            a:hover{
-                color: $dark-grey-blue;
-            }
-
+            }           
+     
         }
     }
-    .title{
-        grid-area: arrow;
 
+    .title{
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-
-        padding-bottom: 15%;
 
         h1{
+            text-transform: uppercase;
+            text-align: center;
             font-family: $font-headers;
             color: $white;
-
-            padding-bottom: 5%;
-            text-transform: uppercase;
             letter-spacing: 10px;
             font-size: 300%;
-
+            padding-top: 30%;
+            padding-bottom: 5%;
         }
     }
-
 }
 
 main{
     grid-area: main;
-
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(4, 0.5fr);
-
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(7, 0.1fr);
     grid-template-areas: 
-    "brand egg"
-    "wine standout"
-    "graphic photo"
-    "feedback feedback";
-
-    .brand{
-        grid-area: brand;
-
-        font-family: $font-body;
-
-        @extend %card;
-
-        .learn{
-            border-bottom: 5px solid hsla(51, 100%, 49%, 0.3);
-        }
-
-        .learn:hover{
-            border-bottom: 5px solid $yellow;
-        }
-    }
-
+    "egg"
+    "brand"
+    "wine"
+    "standout"
+    "graphic"
+    "photo"
+    "feedback";
     .egg{
         grid-area: egg;
     }
-    
-    .wine{
+    .brand{
+        grid-area: brand;
+        @include card($hover-yellow, $yellow);
+    }
+    .glass{
         grid-area: wine;
     }
-
     .standout{
         grid-area: standout;
-        font-family: $font-body;
-
-        @extend %card;
-
-        .learn{
-            border-bottom: 5px solid hsla(7, 99%, 70%,0.3);
-        }
-       
-        .learn:hover{
-            border-bottom: 5px solid $red;
-        }
+        @include card($hover-red, $red);
     }
-
     .graphic{
         grid-area: graphic;
-        position: relative;
-
         @include overlay;
     }
-
     .photo{
         grid-area: photo;
-        position: relative;
-
         @include overlay($theme: $photo);
     }
-
     .container-clients{
         grid-area: feedback;
-
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-between;
-
         padding-top: 10%;
         padding-bottom: 10%;
 
@@ -269,24 +249,14 @@ main{
 
         .clients{
             display: grid;
-            grid-template-columns: 0.5fr repeat(3, 0.7fr) 0.5fr;
-            grid-template-areas: ". emily thomas jennie .";
-            column-gap: 2%;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            grid-template-areas: 
+            "emily" 
+            "thomas" 
+            "jennie";
             padding-top: 5%;
-        
-            .blurb{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
 
-                line-height: 1.7em;
-                text-align: center;
-
-                p{
-                    font-family: $font-body;
-                    color: $dark-grey;
-                }
-            }
             .emily{
                 grid-area: emily;
             }
@@ -296,301 +266,284 @@ main{
             .jennie{
                 grid-area: jennie;
             }
-            img{
-                border-radius: 50%;
-                margin-bottom: 15%;
-                width: 25%;
+
+            .blurb{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                line-height: 1.7em;
+                text-align: center;
+
+                p{
+                    font-family: $font-body;
+                    color: $dark-grey;
+                }
             }
 
-          div p:first-child{
+            div p:first-child{
                 font-family: $font-headers;
                 color: $dark-grey-blue;
                 font-size: 1.1rem;
                 margin-bottom: 0;
             }
-        div p:last-child{
+            div p:last-child{
                 font-family: $font-body;
                 color: $light-grey;
                 font-size: 0.9rem;
                 margin-top: 0;
             }
 
+            img{
+                border-radius: 50%;
+                margin-bottom: 2%;
+                margin-top: 10%;
+            }
+            img + p{
+                width: 77%; 
+            }
         }
-
     }
-}
-
+}   
 .images{
     grid-area: images;
-
     .gallery{
         list-style: none;
         padding: 0;
         margin: 0;
-        
+
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
         grid-template-areas: 
-        "milk fruit cone cube";
-
-        .milk{
-            grid-area: milk;
-        }
-         .orange{
-            grid-area: fruit;
-        }
-          .cone{
-            grid-area: cone;
-        }
-          .cube{
-            grid-area: cube;
-        }
-
+         "img1 img2"
+         "img3 img4";
         
+        .milk{
+            grid-area: img1;
+        }
+        .orange{
+            grid-area: img2;
+        }
+        .cone{
+            grid-area: img3;
+        }
+        .cube{
+            grid-area: img4;
+        }
     }
-
 
 }
 
 footer{
     grid-area: footer;
     background-color: $footer-bg;
-
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-
-    padding-top: 5%;
-    padding-bottom: 5%;
+    padding-top: 10%;
+    padding-bottom: 10%;
 
     svg{
-        fill: #2C7566;
+        fill: $footer-svg;
     }
-
+    
     nav{
-        ul{
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-
-            padding-bottom: 10%;
-        }
-
         .footer-nav{
+            @extend %footer;
             li{
-                padding-right: 10%;
                 padding-left: 10%;
-            }
-            a{
-                color: $footer-text;
-                font-family: $font-body;
-            }
-            a:hover{
-                color:$white;
+                padding-right: 10%;
+                a{
+                    color: $footer-text;
+                    font-family: $font-body;
+                    text-decoration: none;
+                    padding-right: 10%;
+                    padding-left: 10%;
+                }
+                a:hover{
+                    color:$white;
+                }
             }
         }
-
+        
         .social{
+            @extend %footer;
             li{
                 padding-right: 5%;
                 padding-left: 5%;
             }
             svg{
-                fill: #2C7566;;
+                fill: $footer-svg;
             }
             svg:hover{
                 fill: $white;
             }
         }
-
-    }
-    .attribution{
-        font-family: $font-body;
-        color: $footer-text;
-
-        a{
-            color: $dark-grey-blue;
-            text-decoration: underline;
-        }
     }
 }
+
+.attribution{
+    text-align: center;
+    font-family: $font-body;
+    color: $footer-text;
+    
+    a{
+        color: $dark-grey-blue;
+        text-decoration: underline;
+    }
+    a:hover{
+        color: $white;
+    }
+}
+
 
 //Media Queries
-@media screen and (max-width: 1130px) and (min-width: 751px){
-    .standout, .brand{
-        font-size: 70%;
+
+//Larger devices
+@media screen and (min-width: 751px){
+    .mobile-break, .burger{
+        display: none;
     }
-
-    main{
-        .photo, .graphic{
-            .text-overlay{
-                padding: 0;
-                bottom: 42%;
-            }
-        }
-    }
-}
-
-@media only screen and (max-width: 750px){
-
-    @mixin overlay($theme: $graphic){
-        .text-overlay{
-            padding: 5%;
-            height: 13em;
-        }
-    }
-
-    %card {
-        padding: 10% 0 10% 0;
-        width: 83%;
-
-        h2{
-            font-size: 200%;
-        }
-
-        p{
-            text-align: center;
-
-        }
-        h2, .learn{
-            text-align: center;
-        }
-    }
-
     .container{
         display: grid;
-        grid-template-columns: 100%;
+        grid-template-columns: repeat(2,1fr);
         grid-template-rows: 0.9fr 3fr repeat(2, 0.5fr);
         grid-template-areas: 
-            "head"
-            "main"
-            "images"
-            "footer";
+            "head head"
+            "main main"
+            "images images"
+            "footer footer";
+    }
+
+    @mixin overlay($theme: $graphic){
+        position: relative;
+        width: 100%;
+        .text-overlay{
+            padding-left: 25%;
+            padding-right: 25%;
+            margin-top: 45%;
+        }
+    }
+
+    @mixin card($hover-color, $color) {
+        text-align: left;
+        width: 58%;
+
+        h2{
+            font-size: 280%;
+        }
     }
 
     header{
         grid-area: head;
-        background-image: url("images/mobile/image-header.jpg");
+        background-image: url("images/desktop/image-header.jpg");
 
         nav{
-            .logo-burger{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 0;
+
+            .logo{
+                flex-grow: 2;
+            }
+
+
+            .toggle-menu{
+                position: revert;
                 display: flex;
                 flex-direction: row;
                 align-items: center;
+                justify-content: space-evenly;
+                flex-grow: 1;
 
-                margin-top: 5%;
-                margin-bottom: 10%;
-            }
-
-            .menu{
-                margin-left: 50%;
-                margin-right: 6%;
+                top: 0;
+                left: 0;
+                width: auto;
+                margin: 0;
+                padding: 0;
+                background-color: transparent;
+        
+                li{
+                    flex-grow: 1;
+                    a{
+                        color: $white;
+                    }    
+                    .button{
+                        background-color: $white;
+                    }
+                    .button:hover{
+                        background-color: $btn-hover;
+                        color: $white;
+                    }           
+             
+                }
+                .right-nav{
+                    display: flex;
+                }
             }
         }
 
         .title{
-            padding-bottom: 60%;
-
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 20%;
+    
             h1{
-                text-align: center;
-                margin-bottom: 10%;
-                margin-top: 15%;
-                letter-spacing: 5px;
+                padding-top: 2%;
+                padding-bottom: 2%;
             }
         }
-  
-    }
-
-    .right-nav{
-        display: none;
-    }
-
-
-    .toggle-menu{
-        display: flex;
-        flex-direction: column;
-
-        position: absolute;
-
-        width: 89%;
-
-        left: 5%;
-        top: 20%;
-
-        padding: 0;
-        background-color: $white;
-
-        li{
-            padding-top: 10%;
-            padding-bottom: 10%;
-            a{
-                color: $grey;
-            }
-
-            .button{
-                background-color: $yellow;
-            }
-            .button:hover{
-                background-color: $yellow;
-            }
-        }
-
     }
 
     main{
         grid-area: main;
-
         display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(7, 0.1fr);
-
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(4, 0.5fr);
         grid-template-areas: 
-        "egg"
-        "brand"
-        "wine"
-        "standout"
-        "graphic"
-        "photo"
-        "feedback";
+        "brand egg"
+        "wine standout"
+        "graphic photo"
+        "feedback feedback";
 
-        .egg{
-            grid-area: egg;
-        }
         .brand{
             grid-area: brand;
+            @include card($hover-yellow, $yellow);
         }
-        .glass{
+        .egg{
+            grid-area: egg;
+        }  
+        .wine{
             grid-area: wine;
         }
+        
         .standout{
             grid-area: standout;
+            @include card($hover-red, $red);
         }
+        
         .graphic{
             grid-area: graphic;
-
-            @include overlay;
+            @include overlay($theme: $graphic);
         }
+
         .photo{
             grid-area: photo;
-
-            @include overlay;
+            @include overlay($theme: $photo);
         }
+    
         .container-clients{
             grid-area: feedback;
 
             .clients{
                 display: grid;
-                grid-template-columns: 1fr;
+                grid-template-columns: 0.5fr repeat(3, 0.7fr) 0.5fr;
                 grid-template-rows: 1fr;
-                grid-template-areas: 
-                "emily" 
-                "thomas" 
-                "jennie";
-                column-gap: none;
+                grid-template-areas: ". emily thomas jennie .";
+                column-gap: 2%;
                 padding-top: 5%;
 
                 .emily{
@@ -603,16 +556,8 @@ footer{
                     grid-area: jennie;
                 }
 
-                img{
-                    margin-bottom: 2%;
-                    margin-top: 10%;
-
-                    height: 100%;
-                }
-
                 img + p{
-                    width: 70%;
-                    
+                    width: 100%;
                 }
             }
         }
@@ -621,97 +566,193 @@ footer{
 
     .images{
         grid-area: images;
-
-         .gallery{
-             display: grid;
-             grid-template-columns: 1fr 1fr;
-             grid-template-rows: 1fr 1fr;
-
-             grid-template-areas: 
-              "img1 img2"
-              "img3 img4";
-
-
-             .milk{
-                grid-area: img1;
+        .gallery{
+            list-style: none;
+            padding: 0;
+            margin: 0;      
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 1fr;
+            grid-template-areas: 
+            "milk fruit cone cube";
+            .milk{
+                grid-area: milk;
             }
-             .orange{
-                grid-area: img2;
+            .orange{
+                grid-area: fruit;
             }
-              .cone{
-                grid-area: img3;
+            .cone{
+                grid-area: cone;
             }
-              .cube{
-                grid-area: img4;
+            .cube{
+                grid-area: cube;
             }
-
         }
-
     }
 
-    .attribution{
+}
+
+//Responsive text
+
+@media screen and (min-width: 751px) and (max-width: 1260px){
+    @mixin overlay($theme: $graphic){
+        .text-overlay{
+            padding-left: 2%;
+            padding-right: 2%;
+            margin-top: 40%;
+        }
+
+        h3{
+            margin-bottom: 2%;
+        }
+    }
+    @mixin card($hover-color, $color) {
+        width: 80%;
+        h2{
+            font-size: 200%;
+        }
+    }
+    
+    main{
+        .brand{
+            @include card($hover-yellow, $yellow);
+        }
+        .standout{
+            @include card($hover-red, $red);
+        }
+
+        .graphic{
+            @include overlay;
+        }
+        .photo{
+            @include overlay($theme: $photo);
+        }
+
+        .container-clients{
+            .clients{
+                display: grid;
+                grid-template-columns: 0.05fr repeat(3, 5fr) 0.05fr;
+                grid-template-rows: 1fr;
+                grid-template-areas: ". emily thomas jennie .";
+                column-gap: 1%;
+
+                .emily{
+                    grid-area: emily;
+                }
+                .thomas{
+                    grid-area: thomas;
+                }
+                .jennie{
+                    grid-area: jennie;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 751px) and (max-width: 965px) {
+    @mixin card($hover-color, $color) {
         text-align: center;
     }
 
-}
-
-@media screen and (max-width: 414px) and (min-width: 376px){
-    header{
-        nav{       
-         .menu{
-            margin-left: 53%;
-        }
-
+    @mixin overlay($theme: $graphic){
+        .text-overlay{
+            margin-top: 50%;
+            padding-left: 20%;
+            padding-right: 20%;
         }
     }
 
-}
-
-@media screen and (max-width: 751px) and (min-width: 500px){
-    header{
-        nav{       
-         .menu{
-            margin-left: 63%;
-        }
-
-        }
+    .container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 700px repeat(3, 1fr);
+        grid-template-areas: 
+            "head"
+            "main"
+            "images"
+            "footer";
     }
 
-}
-
-@media screen and (min-width: 751px){
-    .mobile-break{
-        display: none;
+    header{
+        grid-area: head;
     }
 
-    .menu{
-        display: none;
-    } 
+    main{
+        grid-area: main;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(7, 0.1fr);
+        grid-template-areas: 
+        "egg"
+        "brand"
+        "wine"
+        "standout"
+        "graphic"
+        "photo"
+        "feedback";
 
-
-    header{
-            nav{
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-between;
-        
-                ul{
-                    padding-top: 0;
-                    padding-right: 8%;
-
-                    .right-nav{
-                        display: flex;
-                    }
-
-                }
-                .logo{
-                    margin-left: 45%;
-                }
-
-            
-        
+        .egg, .brand, .glass, .standout, .graphic, .photo {
+            img{
+                width: 100%;
             }
         }
+
+        .egg{
+            grid-area: egg;
+        }
+        .brand{
+            grid-area: brand;
+            @include card($hover-yellow, $yellow);
+        }
+        .glass{
+            grid-area: wine;
+        }
+        .standout{
+            grid-area: standout;
+            @include card($hover-red, $red);
+        }
+        .graphic{
+            grid-area: graphic;
+            @include overlay;
+        }
+        .photo{
+            grid-area: photo;
+            @include overlay($theme: $photo);
+        }
+        .container-clients{
+            grid-area: feedback;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 10%;
+            padding-bottom: 10%;
+    
+            .clients{
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr;
+                grid-template-areas: 
+                "emily" 
+                "thomas" 
+                "jennie";
+                padding-top: 5%;
+    
+                .emily{
+                    grid-area: emily;
+                }
+                .thomas{
+                    grid-area: thomas;
+                }
+                .jennie{
+                    grid-area: jennie;
+                }
+
+                img + p{
+                    width: 70%;
+                }
+            }
+        }
+    }
 
 }

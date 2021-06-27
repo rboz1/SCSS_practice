@@ -1,48 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap");
-main .brand, main .standout {
-  -ms-grid-column-align: center;
-      justify-self: center;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  line-height: 170%;
-  width: 70%;
-}
-
-main .brand p, main .standout p {
-  color: #818498;
-  font-size: 1.1rem;
-}
-
-main .brand h2, main .standout h2 {
-  font-size: 280%;
-  font-weight: 900;
-  line-height: 130%;
-}
-
-main .brand .learn, main .standout .learn {
-  text-transform: uppercase;
-  text-decoration: none;
-  border-radius: 7%;
-}
-
-main .brand h2, main .standout h2, main .brand .learn, main .standout .learn {
-  font-family: "Fraunces", serif;
-  color: #23303e;
-}
-
-a {
-  text-decoration: none;
+footer nav .footer-nav, footer nav .social {
+  list-style: none;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 10%;
 }
 
 .container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
-  -ms-grid-rows: 0.9fr 3fr (0.5fr)[2];
-      grid-template-rows: 0.9fr 3fr repeat(2, 0.5fr);
-      grid-template-areas: "head head" "main main" "images images" "footer footer";
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 700px (1fr)[3];
+      grid-template-rows: 700px repeat(3, 1fr);
+      grid-template-areas: "head" "main" "images" "footer";
   margin: 0;
   width: 100vw;
   height: 100vh;
@@ -56,37 +39,14 @@ a {
 header {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
   grid-area: head;
-  background-image: url("images/desktop/image-header.jpg");
+  background-image: url("images/mobile/image-header.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 100%;
-      grid-template-columns: 100%;
-  -ms-grid-rows: 0.5fr 2fr;
-      grid-template-rows: 0.5fr 2fr;
-      grid-template-areas: "navbar" "arrow";
 }
 
 header nav {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  grid-area: navbar;
-}
-
-header nav .logo {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-}
-
-header nav ul {
-  list-style: none;
-  padding-right: 2%;
-  padding-top: 5%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -97,41 +57,25 @@ header nav ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 7%;
 }
 
-header nav ul .right-nav {
-  padding-left: 5%;
+header nav .logo {
+  margin-left: 6%;
 }
 
-header nav ul .button {
-  background-color: white;
-  border: none;
-  border-radius: 25px;
-  color: #23303e;
-  padding: 15px 32px;
-  font-family: "Fraunces", serif;
-  text-transform: uppercase;
-  text-align: center;
+header nav .burger {
+  margin-right: 6%;
 }
 
-header nav ul .button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: white;
+header .right-nav {
+  display: none;
 }
 
-header nav ul a {
-  font-family: "Barlow", sans-serif;
-  color: white;
-}
-
-header nav ul a:hover {
-  color: #23303e;
-}
-
-header .title {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  grid-area: arrow;
+header .toggle-menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -142,43 +86,123 @@ header .title {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding-bottom: 15%;
+  position: absolute;
+  width: 89%;
+  left: 5%;
+  top: 20%;
+  padding: 0;
+  background-color: white;
+}
+
+header .toggle-menu li {
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+
+header .toggle-menu li a {
+  text-decoration: none;
+  font-family: "Barlow", sans-serif;
+  color: #818498;
+}
+
+header .toggle-menu li a:hover {
+  color: #23303e;
+}
+
+header .toggle-menu li .button {
+  background-color: #fad400;
+  border: none;
+  border-radius: 25px;
+  color: #23303e;
+  padding: 15px 32px;
+  font-family: "Fraunces", serif;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+header .toggle-menu li .button:hover {
+  background-color: #fad400;
+  color: white;
+}
+
+header .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 header .title h1 {
+  text-transform: uppercase;
+  text-align: center;
   font-family: "Fraunces", serif;
   color: white;
-  padding-bottom: 5%;
-  text-transform: uppercase;
   letter-spacing: 10px;
   font-size: 300%;
+  padding-top: 30%;
+  padding-bottom: 5%;
 }
 
 main {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
   grid-area: main;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  -ms-grid-rows: (0.5fr)[4];
-      grid-template-rows: repeat(4, 0.5fr);
-      grid-template-areas: "brand egg" "wine standout" "graphic photo" "feedback feedback";
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: (0.1fr)[7];
+      grid-template-rows: repeat(7, 0.1fr);
+      grid-template-areas: "egg" "brand" "wine" "standout" "graphic" "photo" "feedback";
+}
+
+main .egg {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: egg;
 }
 
 main .brand {
-  -ms-grid-row: 1;
+  -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: brand;
-  font-family: "Barlow", sans-serif;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: center;
+  line-height: 170%;
+  padding: 10% 0 10% 0;
+  width: 75%;
+}
+
+main .brand p {
+  color: #818498;
+  font-size: 1.1rem;
+}
+
+main .brand h2 {
+  font-size: 200%;
+  font-weight: 900;
+  line-height: 130%;
+}
+
+main .brand h2, main .brand .learn {
+  font-family: "Fraunces", serif;
+  color: #23303e;
 }
 
 main .brand .learn {
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 7%;
   border-bottom: 5px solid rgba(250, 212, 0, 0.3);
 }
 
@@ -186,26 +210,47 @@ main .brand .learn:hover {
   border-bottom: 5px solid #fad400;
 }
 
-main .egg {
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
-  grid-area: egg;
-}
-
-main .wine {
-  -ms-grid-row: 2;
+main .glass {
+  -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: wine;
 }
 
 main .standout {
-  -ms-grid-row: 2;
-  -ms-grid-column: 2;
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
   grid-area: standout;
-  font-family: "Barlow", sans-serif;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: center;
+  line-height: 170%;
+  padding: 10% 0 10% 0;
+  width: 75%;
+}
+
+main .standout p {
+  color: #818498;
+  font-size: 1.1rem;
+}
+
+main .standout h2 {
+  font-size: 200%;
+  font-weight: 900;
+  line-height: 130%;
+}
+
+main .standout h2, main .standout .learn {
+  font-family: "Fraunces", serif;
+  color: #23303e;
 }
 
 main .standout .learn {
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 7%;
   border-bottom: 5px solid rgba(254, 120, 103, 0.3);
 }
 
@@ -214,10 +259,9 @@ main .standout .learn:hover {
 }
 
 main .graphic {
-  -ms-grid-row: 3;
+  -ms-grid-row: 5;
   -ms-grid-column: 1;
   grid-area: graphic;
-  position: relative;
 }
 
 main .graphic .text-overlay {
@@ -230,14 +274,10 @@ main .graphic .text-overlay {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  bottom: 2%;
-  padding: 27%;
-  line-height: 1.7em;
-  height: 3em;
   text-align: center;
+  padding: 5%;
+  line-height: 1.7em;
+  margin-top: 90%;
 }
 
 main .graphic h3 {
@@ -251,10 +291,9 @@ main .graphic p {
 }
 
 main .photo {
-  -ms-grid-row: 3;
-  -ms-grid-column: 2;
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
   grid-area: photo;
-  position: relative;
 }
 
 main .photo .text-overlay {
@@ -267,14 +306,10 @@ main .photo .text-overlay {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  bottom: 2%;
-  padding: 27%;
-  line-height: 1.7em;
-  height: 3em;
   text-align: center;
+  padding: 5%;
+  line-height: 1.7em;
+  margin-top: 90%;
 }
 
 main .photo h3 {
@@ -288,9 +323,8 @@ main .photo p {
 }
 
 main .container-clients {
-  -ms-grid-row: 4;
+  -ms-grid-row: 7;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
   grid-area: feedback;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -302,9 +336,6 @@ main .container-clients {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   padding-top: 10%;
   padding-bottom: 10%;
 }
@@ -319,12 +350,30 @@ main .container-clients h3 {
 main .container-clients .clients {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 0.5fr (0.7fr)[3] 0.5fr;
-      grid-template-columns: 0.5fr repeat(3, 0.7fr) 0.5fr;
-      grid-template-areas: ". emily thomas jennie .";
-  -webkit-column-gap: 2%;
-          column-gap: 2%;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+      grid-template-areas: "emily"  "thomas"  "jennie";
   padding-top: 5%;
+}
+
+main .container-clients .clients .emily {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: emily;
+}
+
+main .container-clients .clients .thomas {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: thomas;
+}
+
+main .container-clients .clients .jennie {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: jennie;
 }
 
 main .container-clients .clients .blurb {
@@ -347,30 +396,6 @@ main .container-clients .clients .blurb p {
   color: #5a636c;
 }
 
-main .container-clients .clients .emily {
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
-  grid-area: emily;
-}
-
-main .container-clients .clients .thomas {
-  -ms-grid-row: 1;
-  -ms-grid-column: 3;
-  grid-area: thomas;
-}
-
-main .container-clients .clients .jennie {
-  -ms-grid-row: 1;
-  -ms-grid-column: 4;
-  grid-area: jennie;
-}
-
-main .container-clients .clients img {
-  border-radius: 50%;
-  margin-bottom: 15%;
-  width: 25%;
-}
-
 main .container-clients .clients div p:first-child {
   font-family: "Fraunces", serif;
   color: #23303e;
@@ -385,10 +410,19 @@ main .container-clients .clients div p:last-child {
   margin-top: 0;
 }
 
+main .container-clients .clients img {
+  border-radius: 50%;
+  margin-bottom: 2%;
+  margin-top: 10%;
+}
+
+main .container-clients .clients img + p {
+  width: 77%;
+}
+
 .images {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
   grid-area: images;
 }
 
@@ -398,41 +432,40 @@ main .container-clients .clients div p:last-child {
   margin: 0;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
-  -ms-grid-rows: 1fr;
-      grid-template-rows: 1fr;
-      grid-template-areas: "milk fruit cone cube";
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas: "img1 img2" "img3 img4";
 }
 
 .images .gallery .milk {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
-  grid-area: milk;
+  grid-area: img1;
 }
 
 .images .gallery .orange {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
-  grid-area: fruit;
+  grid-area: img2;
 }
 
 .images .gallery .cone {
-  -ms-grid-row: 1;
-  -ms-grid-column: 3;
-  grid-area: cone;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: img3;
 }
 
 .images .gallery .cube {
-  -ms-grid-row: 1;
-  -ms-grid-column: 4;
-  grid-area: cube;
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: img4;
 }
 
 footer {
   -ms-grid-row: 4;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
   grid-area: footer;
   background-color: rgba(69, 140, 126, 0.5);
   display: -webkit-box;
@@ -445,44 +478,28 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  padding-top: 5%;
-  padding-bottom: 5%;
+  padding-top: 10%;
+  padding-bottom: 10%;
 }
 
 footer svg {
   fill: #2C7566;
 }
 
-footer nav ul {
-  list-style: none;
-  padding: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding-bottom: 10%;
+footer nav .footer-nav li {
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
-footer nav .footer-nav li {
+footer nav .footer-nav li a {
+  color: #458c7e;
+  font-family: "Barlow", sans-serif;
+  text-decoration: none;
   padding-right: 10%;
   padding-left: 10%;
 }
 
-footer nav .footer-nav a {
-  color: #458c7e;
-  font-family: "Barlow", sans-serif;
-}
-
-footer nav .footer-nav a:hover {
+footer nav .footer-nav li a:hover {
   color: white;
 }
 
@@ -499,56 +516,42 @@ footer nav .social svg:hover {
   fill: white;
 }
 
-footer .attribution {
+.attribution {
+  text-align: center;
   font-family: "Barlow", sans-serif;
   color: #458c7e;
 }
 
-footer .attribution a {
+.attribution a {
   color: #23303e;
   text-decoration: underline;
 }
 
-@media screen and (max-width: 1130px) and (min-width: 751px) {
-  .standout, .brand {
-    font-size: 70%;
-  }
-  main .photo .text-overlay, main .graphic .text-overlay {
-    padding: 0;
-    bottom: 42%;
-  }
+.attribution a:hover {
+  color: white;
 }
 
-@media only screen and (max-width: 750px) {
-  main .brand, main .standout {
-    padding: 10% 0 10% 0;
-    width: 83%;
-  }
-  main .brand h2, main .standout h2 {
-    font-size: 200%;
-  }
-  main .brand p, main .standout p {
-    text-align: center;
-  }
-  main .brand h2, main .standout h2, main .brand .learn, main .standout .learn {
-    text-align: center;
+@media screen and (min-width: 751px) {
+  .mobile-break, .burger {
+    display: none;
   }
   .container {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 100%;
-        grid-template-columns: 100%;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
     -ms-grid-rows: 0.9fr 3fr (0.5fr)[2];
         grid-template-rows: 0.9fr 3fr repeat(2, 0.5fr);
-        grid-template-areas: "head" "main" "images" "footer";
+        grid-template-areas: "head head" "main main" "images images" "footer footer";
   }
   header {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
     grid-area: head;
-    background-image: url("images/mobile/image-header.jpg");
+    background-image: url("images/desktop/image-header.jpg");
   }
-  header nav .logo-burger {
+  header nav {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -559,26 +562,62 @@ footer .attribution a {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    margin-top: 5%;
-    margin-bottom: 10%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-top: 0;
   }
-  header nav .menu {
-    margin-left: 50%;
-    margin-right: 6%;
+  header nav .logo {
+    -webkit-box-flex: 2;
+        -ms-flex-positive: 2;
+            flex-grow: 2;
+  }
+  header nav .toggle-menu {
+    position: revert;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    top: 0;
+    left: 0;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+  }
+  header nav .toggle-menu li {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+  }
+  header nav .toggle-menu li a {
+    color: white;
+  }
+  header nav .toggle-menu li .button {
+    background-color: white;
+  }
+  header nav .toggle-menu li .button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+  }
+  header nav .toggle-menu .right-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
   header .title {
-    padding-bottom: 60%;
-  }
-  header .title h1 {
-    text-align: center;
-    margin-bottom: 10%;
-    margin-top: 15%;
-    letter-spacing: 5px;
-  }
-  .right-nav {
-    display: none;
-  }
-  .toggle-menu {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -586,25 +625,229 @@ footer .attribution a {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    position: absolute;
-    width: 89%;
-    left: 5%;
-    top: 20%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-bottom: 20%;
+  }
+  header .title h1 {
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+  main {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: main;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: (0.5fr)[4];
+        grid-template-rows: repeat(4, 0.5fr);
+        grid-template-areas: "brand egg" "wine standout" "graphic photo" "feedback feedback";
+  }
+  main .brand {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: brand;
+    text-align: left;
+    width: 58%;
+  }
+  main .brand h2 {
+    font-size: 280%;
+  }
+  main .egg {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: egg;
+  }
+  main .wine {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: wine;
+  }
+  main .standout {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: standout;
+    text-align: left;
+    width: 58%;
+  }
+  main .standout h2 {
+    font-size: 280%;
+  }
+  main .graphic {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: graphic;
+    position: relative;
+    width: 100%;
+  }
+  main .graphic .text-overlay {
+    padding-left: 25%;
+    padding-right: 25%;
+    margin-top: 45%;
+  }
+  main .photo {
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
+    grid-area: photo;
+    position: relative;
+    width: 100%;
+  }
+  main .photo .text-overlay {
+    padding-left: 25%;
+    padding-right: 25%;
+    margin-top: 45%;
+  }
+  main .container-clients {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: feedback;
+  }
+  main .container-clients .clients {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 0.5fr (0.7fr)[3] 0.5fr;
+        grid-template-columns: 0.5fr repeat(3, 0.7fr) 0.5fr;
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: ". emily thomas jennie .";
+    -webkit-column-gap: 2%;
+            column-gap: 2%;
+    padding-top: 5%;
+  }
+  main .container-clients .clients .emily {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: emily;
+  }
+  main .container-clients .clients .thomas {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: thomas;
+  }
+  main .container-clients .clients .jennie {
+    -ms-grid-row: 1;
+    -ms-grid-column: 4;
+    grid-area: jennie;
+  }
+  main .container-clients .clients img + p {
+    width: 100%;
+  }
+  .images {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: images;
+  }
+  .images .gallery {
+    list-style: none;
     padding: 0;
-    background-color: white;
+    margin: 0;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "milk fruit cone cube";
   }
-  .toggle-menu li {
-    padding-top: 10%;
-    padding-bottom: 10%;
+  .images .gallery .milk {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: milk;
   }
-  .toggle-menu li a {
-    color: #818498;
+  .images .gallery .orange {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: fruit;
   }
-  .toggle-menu li .button {
-    background-color: #fad400;
+  .images .gallery .cone {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: cone;
   }
-  .toggle-menu li .button:hover {
-    background-color: #fad400;
+  .images .gallery .cube {
+    -ms-grid-row: 1;
+    -ms-grid-column: 4;
+    grid-area: cube;
+  }
+}
+
+@media screen and (min-width: 751px) and (max-width: 1260px) {
+  main .brand {
+    width: 80%;
+  }
+  main .brand h2 {
+    font-size: 200%;
+  }
+  main .standout {
+    width: 80%;
+  }
+  main .standout h2 {
+    font-size: 200%;
+  }
+  main .graphic .text-overlay {
+    padding-left: 2%;
+    padding-right: 2%;
+    margin-top: 40%;
+  }
+  main .graphic h3 {
+    margin-bottom: 2%;
+  }
+  main .photo .text-overlay {
+    padding-left: 2%;
+    padding-right: 2%;
+    margin-top: 40%;
+  }
+  main .photo h3 {
+    margin-bottom: 2%;
+  }
+  main .container-clients .clients {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 0.05fr (5fr)[3] 0.05fr;
+        grid-template-columns: 0.05fr repeat(3, 5fr) 0.05fr;
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: ". emily thomas jennie .";
+    -webkit-column-gap: 1%;
+            column-gap: 1%;
+  }
+  main .container-clients .clients .emily {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: emily;
+  }
+  main .container-clients .clients .thomas {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: thomas;
+  }
+  main .container-clients .clients .jennie {
+    -ms-grid-row: 1;
+    -ms-grid-column: 4;
+    grid-area: jennie;
+  }
+}
+
+@media screen and (min-width: 751px) and (max-width: 965px) {
+  .container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 700px (1fr)[3];
+        grid-template-rows: 700px repeat(3, 1fr);
+        grid-template-areas: "head" "main" "images" "footer";
+  }
+  header {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: head;
   }
   main {
     -ms-grid-row: 2;
@@ -618,6 +861,9 @@ footer .attribution a {
         grid-template-rows: repeat(7, 0.1fr);
         grid-template-areas: "egg" "brand" "wine" "standout" "graphic" "photo" "feedback";
   }
+  main .egg img, main .brand img, main .glass img, main .standout img, main .graphic img, main .photo img {
+    width: 100%;
+  }
   main .egg {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
@@ -627,6 +873,7 @@ footer .attribution a {
     -ms-grid-row: 2;
     -ms-grid-column: 1;
     grid-area: brand;
+    text-align: center;
   }
   main .glass {
     -ms-grid-row: 3;
@@ -637,6 +884,7 @@ footer .attribution a {
     -ms-grid-row: 4;
     -ms-grid-column: 1;
     grid-area: standout;
+    text-align: center;
   }
   main .graphic {
     -ms-grid-row: 5;
@@ -644,8 +892,9 @@ footer .attribution a {
     grid-area: graphic;
   }
   main .graphic .text-overlay {
-    padding: 5%;
-    height: 13em;
+    margin-top: 50%;
+    padding-left: 20%;
+    padding-right: 20%;
   }
   main .photo {
     -ms-grid-row: 6;
@@ -653,13 +902,26 @@ footer .attribution a {
     grid-area: photo;
   }
   main .photo .text-overlay {
-    padding: 5%;
-    height: 13em;
+    margin-top: 50%;
+    padding-left: 20%;
+    padding-right: 20%;
   }
   main .container-clients {
     -ms-grid-row: 7;
     -ms-grid-column: 1;
     grid-area: feedback;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-top: 10%;
+    padding-bottom: 10%;
   }
   main .container-clients .clients {
     display: -ms-grid;
@@ -669,8 +931,6 @@ footer .attribution a {
     -ms-grid-rows: 1fr;
         grid-template-rows: 1fr;
         grid-template-areas: "emily"  "thomas"  "jennie";
-    -webkit-column-gap: none;
-            column-gap: none;
     padding-top: 5%;
   }
   main .container-clients .clients .emily {
@@ -688,98 +948,8 @@ footer .attribution a {
     -ms-grid-column: 1;
     grid-area: jennie;
   }
-  main .container-clients .clients img {
-    margin-bottom: 2%;
-    margin-top: 10%;
-    height: 100%;
-  }
   main .container-clients .clients img + p {
     width: 70%;
   }
-  .images {
-    -ms-grid-row: 3;
-    -ms-grid-column: 1;
-    grid-area: images;
-  }
-  .images .gallery {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
-    -ms-grid-rows: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        grid-template-areas: "img1 img2" "img3 img4";
-  }
-  .images .gallery .milk {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-    grid-area: img1;
-  }
-  .images .gallery .orange {
-    -ms-grid-row: 1;
-    -ms-grid-column: 2;
-    grid-area: img2;
-  }
-  .images .gallery .cone {
-    -ms-grid-row: 2;
-    -ms-grid-column: 1;
-    grid-area: img3;
-  }
-  .images .gallery .cube {
-    -ms-grid-row: 2;
-    -ms-grid-column: 2;
-    grid-area: img4;
-  }
-  .attribution {
-    text-align: center;
-  }
 }
-
-@media screen and (max-width: 414px) and (min-width: 376px) {
-  header nav .menu {
-    margin-left: 53%;
-  }
-}
-
-@media screen and (max-width: 751px) and (min-width: 500px) {
-  header nav .menu {
-    margin-left: 63%;
-  }
-}
-
-@media screen and (min-width: 751px) {
-  .mobile-break {
-    display: none;
-  }
-  .menu {
-    display: none;
-  }
-  header nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  header nav ul {
-    padding-top: 0;
-    padding-right: 8%;
-  }
-  header nav ul .right-nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  header nav .logo {
-    margin-left: 45%;
-  }
-}
-/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=styles2.css.map */
