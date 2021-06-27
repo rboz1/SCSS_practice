@@ -71,14 +71,8 @@ header nav .burger {
   margin-right: 6%;
 }
 
-header .right-nav {
-  display: none;
-}
-
 header .toggle-menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -92,6 +86,12 @@ header .toggle-menu {
   top: 20%;
   padding: 0;
   background-color: white;
+}
+
+header .toggle-menu .right-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 header .toggle-menu li {
@@ -952,4 +952,4 @@ footer nav .social svg:hover {
     width: 70%;
   }
 }
-/*# sourceMappingURL=styles2.css.map */
+/*# sourceMappingURL=styles.css.map */

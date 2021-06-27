@@ -1,11 +1,23 @@
 function toggleMenu(){
-  let menu = document.getElementsByClassName("right-nav");
+  let menu = document.getElementsByClassName("toggle-menu");
 
-  for(i=0; i < menu.length; i++){
-    if (menu[i].style.display === "" || menu[i].style.display === "none"){
-      menu[i].style.display = "flex";
-     }else{
-       menu[i].style.display = "none";
-     }
-   }
+
+if (menu[0].style.display === "" || menu[0].style.display === "none"){
+    menu[0].style.display = "flex";
+    }else{
+      menu[0].style.display = "none";
+    }
 }
+
+function displayLargeNav(){
+  let width = window.innerWidth;
+  let menu = document.getElementsByClassName("toggle-menu");
+
+  if (width >= 752){
+    menu[0].style.display = "flex";
+  }else{
+    menu[0].style.display = "none";
+  }
+ }
+
+window.onresize = displayLargeNav;

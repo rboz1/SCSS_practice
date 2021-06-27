@@ -133,12 +133,8 @@ header{
         }
     }
 
-    .right-nav{
-        display: none;
-    }
-
     .toggle-menu{
-        display: flex;
+        display: none;
         flex-direction: column;
         align-items: center;
         position: absolute;
@@ -147,6 +143,10 @@ header{
         top: 20%;
         padding: 0;
         background-color: $white;
+
+        .right-nav{
+        display: flex;
+        }
 
         li{
             padding-top: 10%;
