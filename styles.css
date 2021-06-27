@@ -32,6 +32,7 @@ footer nav .footer-nav, footer nav .social {
 }
 
 .container img {
+  max-width: 100%;
   display: block;
 }
 
