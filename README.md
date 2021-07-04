@@ -79,7 +79,7 @@ Proud of this code!
 ```
 
 ```
-function displayLargeNav(){
+let displayLargeNav = () => {
   let width = window.innerWidth;
   let menu = document.getElementsByClassName("toggle-menu");
 
@@ -88,7 +88,7 @@ function displayLargeNav(){
   }else{
     menu[0].style.display = "none";
   }
- }
+}
 
 window.onresize = displayLargeNav;
 ```
