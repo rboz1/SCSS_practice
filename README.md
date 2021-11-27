@@ -112,4 +112,4 @@ I want to continue using **Grid**, **Flexbox**, and (the entire point of this pr
 
 ## Author
 
-- Website - [Rachel Bozadjian](https://www.your-site.com)
+- Website - [Rachel Bozadjian](https://github.com/rboz1)
