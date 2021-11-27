@@ -11,6 +11,7 @@
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
+- [Acknowledgements](#Frontend Mentor)
 
 ## Overview
 
@@ -113,3 +114,7 @@ I want to continue using **Grid**, **Flexbox**, and (the entire point of this pr
 ## Author
 
 - Website - [Rachel Bozadjian](https://github.com/rboz1)
+
+# Frontend Mentor
+
+This is a solution to the [Sunnyside agency landing page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/sunnyside-agency-landing-page-7yVs3B6ef). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
