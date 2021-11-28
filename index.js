@@ -7,7 +7,7 @@ let toggleMenu = () => {
     }else{
       return menu[0].style.display = "none";
   }
-}
+};
 
 /*Prevents desktop navbar from disappearing after mobile hamburger menu is toggled 
 and window is resized*/
@@ -21,6 +21,6 @@ let displayLargeNav = () => {
   }else{
     return menu[0].style.display = "none";
   }
-}
+};
 
 window.onresize = displayLargeNav;
