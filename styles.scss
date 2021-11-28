@@ -592,8 +592,6 @@ footer{
 
 }
 
-//Responsive text
-
 @media screen and (min-width: 751px) and (max-width: 1260px){
     @mixin overlay($theme: $graphic){
         .text-overlay{
@@ -764,6 +762,15 @@ footer{
                 letter-spacing: 5px;
             }
             
+        }
+    }
+    
+}
+
+@media screen and (min-width: 1440px){
+    .brand, .egg, .glass, .standout, .graphic, .photo{
+        img{
+            width: 200%;
         }
     }
     

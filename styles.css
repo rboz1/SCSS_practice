@@ -958,4 +958,10 @@ footer nav .social svg:hover {
     letter-spacing: 5px;
   }
 }
+
+@media screen and (min-width: 1440px) {
+  .brand img, .egg img, .glass img, .standout img, .graphic img, .photo img {
+    width: 200%;
+  }
+}
 /*# sourceMappingURL=styles.css.map */
