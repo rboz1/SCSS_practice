@@ -4,15 +4,15 @@
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
   - [Link to Site](#link-to-site)
+  - [Screenshot](#screenshot)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgements](#Frontend Mentor)
+- [Acknowledgements](#Frontend-Mentor)
 
 ## Overview
 
@@ -23,13 +23,13 @@ Users should be able to:
 - View the optimal layout for the site depending on their device's screen size
 - See hover states for all interactive elements on the page
 
-### Screenshot
-
-![screenshot](./screenshot.jpg)
-
 ### Link to Site
 
 [Active site link](https://rboz1.github.io/SCSS_practice/)
+
+### Screenshot
+
+![screenshot](./screenshot.jpg)
 
 ## My process
 
